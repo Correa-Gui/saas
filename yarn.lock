@@ -1567,6 +1567,11 @@ balanced-match@^1.0.0:
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
+big-integer@^1.6.51:
+  version "1.6.52"
+  resolved "https://registry.npmjs.org/big-integer/-/big-integer-1.6.52.tgz"
+  integrity sha512-QxD8cf2eVqJOOz63z6JIN9BzvVs/dlySa5HGSBH5xtR8dPteIRQnBxxKqkNTiT6jbDTF6jAfrd4oMcND9RGbQg==
+
 boolify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/boolify/-/boolify-1.0.1.tgz"
@@ -2590,6 +2595,13 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
+firebird@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.npmjs.org/firebird/-/firebird-0.1.5.tgz"
+  integrity sha512-QoXdF1Xa8tC7uAJb0McCGGsucGJ+jRsfeuvMRViXhmT3t+rEHmwpwJoH2Mjt+uJsgfsThO7sXIOG5H9IcDphNA==
+  dependencies:
+    nan "^2.10.0"
+
 flat-cache@^3.0.4:
   version "3.2.0"
   resolved "https://registry.npmjs.org/flat-cache/-/flat-cache-3.2.0.tgz"
@@ -3376,6 +3388,11 @@ loglevel@^1.4.1:
   resolved "https://registry.npmjs.org/loglevel/-/loglevel-1.9.2.tgz"
   integrity sha512-HgMmCqIJSAKqo68l0rS2AanEWfkxaZ5wNiEFb5ggm08lDs9Xl2KxBlX3PTcaD2chBM1gXAYf491/M2Rv8Jwayg==
 
+long@^5.2.3:
+  version "5.3.2"
+  resolved "https://registry.npmjs.org/long/-/long-5.3.2.tgz"
+  integrity sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA==
+
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz"
@@ -3429,10 +3446,12 @@ make-plural@^7.0.0:
     "@mui/x-data-grid" "^8.3.0"
     "@vitejs/plugin-react" "4.3.4"
     axios "^1.9.0"
+    firebird "^0.1.5"
     formik "2.4.6"
     framer-motion "^10.18.0"
     lodash-es "4.17.21"
     mantis-material-free-react "file:"
+    node-firebird "^1.1.9"
     react "18.3.1"
     react-device-detect "2.2.3"
     react-dom "18.3.1"
@@ -3531,6 +3550,11 @@ mz@^2.7.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
+nan@^2.10.0:
+  version "2.22.2"
+  resolved "https://registry.npmjs.org/nan/-/nan-2.22.2.tgz"
+  integrity sha512-DANghxFkS1plDdRsX0X9pm0Z6SJNN6gBdtXfanwoZ8hooC5gosGFSBGRYHUVPz1asKA/kMRqDRdHrluZ61SpBQ==
+
 nanoid@^3.3.8:
   version "3.3.11"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz"
@@ -3540,6 +3564,14 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
+
+node-firebird@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.npmjs.org/node-firebird/-/node-firebird-1.1.9.tgz"
+  integrity sha512-6Ol+Koide1WbfUp4BJ1dSA4wm091jAgCwwSoihxO/RRdcfR+dMVDE9jd2Z2ixjk7q/vSNJUYORXv7jmRfvwdrw==
+  dependencies:
+    big-integer "^1.6.51"
+    long "^5.2.3"
 
 node-releases@^2.0.19:
   version "2.0.19"

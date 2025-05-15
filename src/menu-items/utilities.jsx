@@ -50,30 +50,7 @@ const utilities = {
       url: '/shadow',
       icon: icons.BarcodeOutlined
     },
-    {
-      id: 'cadastro-bancas',
-      type: 'item',
-      title: 'Bancas',
-      url: '/bancas',
-      icon: icons.BankOutlined,
-      breadcrumbs: true
-    },
-    {
-      id: 'transacoes',
-      title: 'Transações',
-      type: 'item',
-      url: '/transactions/create',
-      icon: icons.ListAltOutlined,
-      breadcrumbs: true
-    },
-     {
-      id: 'cadastro-apostas',
-      type: 'item',
-      title: 'Apostas',
-      url: '/apostas',
-      icon: icons.AppstoreAddOutlined,
-      breadcrumbs: true
-    }
+      { id: 'cad-fornecedores', title: 'Fornecedores', type: 'item', url: '/fornecedores', icon: icons.AppstoreAddOutlined },
   ]
 };
 
