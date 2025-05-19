@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+sqlalchemy>=1.4,<2.0
+sqlalchemy-firebird
+firebirdsql
+python-dotenv
+pydantic
+passlib

@@ -1,0 +1,17 @@
+# Python
+backend/.venv/
+backend/__pycache__/
+backend/*.py[cod]
+*.log
+
+# VSCode
+.vscode/
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+*.env
+# ignore node modules
+frontend/node_modules/
+node_modules/
