@@ -1,0 +1,20 @@
+# Ignore system-specific files
+AppData/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+
+# Node
+node_modules/
+
+# Environment
+.env
+
+# Others
+.DS_Store
