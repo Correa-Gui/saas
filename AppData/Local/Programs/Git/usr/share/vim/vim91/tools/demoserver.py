@@ -38,39 +38,45 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
         print("=== socket opened ===")
         global thesocket
         thesocket = self.request
+        buffer = ''
         while True:
             try:
-                data = self.request.recv(4096).decode('utf-8')
+                chunk = self.request.recv(4096).decode('utf-8')
             except socket.error:
                 print("=== socket error ===")
                 break
-            if data == '':
+            if chunk == '':
                 print("=== socket closed ===")
                 break
-            print("received: {0}".format(data))
-            try:
-                decoded = json.loads(data)
-            except ValueError:
-                print("json decoding failed")
-                decoded = [-1, '']
+            buffer += chunk
+            while '\n' in buffer:
+                data, buffer = buffer.split('\n', 1)
+                if not data:
+                    continue
+                print("received: {0}".format(data))
+                try:
+                    decoded = json.loads(data)
+                except ValueError:
+                    print("json decoding failed")
+                    decoded = [-1, '']
 
-            # Send a response if the sequence number is positive.
-            # Negative numbers are used for "eval" responses.
-            if decoded[0] >= 0:
-                if decoded[1] == 'hello!':
-                    response = "got it"
-                    id = decoded[0]
-                elif decoded[1] == 'hello channel!':
-                    response = "got that"
-                    # response is not to a specific message callback but to the
-                    # channel callback, need to use ID zero
-                    id = 0
-                else:
-                    response = "what?"
-                    id = decoded[0]
-                encoded = json.dumps([id, response])
-                print("sending {0}".format(encoded))
-                self.request.sendall(encoded.encode('utf-8'))
+                # Send a response if the sequence number is positive.
+                # Negative numbers are used for "eval" responses.
+                if decoded[0] >= 0:
+                    if decoded[1] == 'hello!':
+                        response = "got it"
+                        id = decoded[0]
+                    elif decoded[1] == 'hello channel!':
+                        response = "got that"
+                        # response is not to a specific message callback but to the
+                        # channel callback, need to use ID zero
+                        id = 0
+                    else:
+                        response = "what?"
+                        id = decoded[0]
+                    encoded = json.dumps([id, response])
+                    print("sending {0}".format(encoded))
+                    self.request.sendall(encoded.encode('utf-8'))
         thesocket = None
 
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
